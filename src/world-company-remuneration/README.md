@@ -20,17 +20,15 @@ Le but est d'implémenter une fonction qui prend un salarié et son nombre d'ann
 #### US-3 : Le fils du PDG
 Le fils du PDG gagnera 4 fois plus que les autres salariés.
 
+#### US-4 : Nouvel arrivant
+Les nouveaux arrivants seront payés 10% de plus que la grille de base.  
   
- 
- 
- 
- 
  
  
 ####  Conclusion 
   
+Toute ressemblance avec des sociétés existantes serait purement fortuite 
   
-  
-PS : Si ce type de rémunération obscure vous choque, n'hésitez pas à consulter notre [grille de salaire publique](https://shodo.io/grille-salaire-transparente/)
+Mais si ce type de rémunération obscure vous choque, n'hésitez pas à consulter notre [grille de salaire publique](https://shodo.io/grille-salaire-transparente/).
 
-PPS : On recrute ;)
+_PS : On recrute ;)_
