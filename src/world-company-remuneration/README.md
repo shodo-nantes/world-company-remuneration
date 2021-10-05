@@ -1,10 +1,12 @@
+Ceci est un kata de fiction, toute ressemblance avec des sociétés existantes serait purement fortuite.
+
 La world company souhaite créer un générateur de salaire en interne.
 
-Le but est d'implémenter une fonction qui prend un salarié et son nombre d'années d'expérience et retourne le salaire :
+Le but est d'implémenter une fonction qui prend un·e salarié·e et son nombre d'années d'expérience et retourne le salaire :
 
 #### US-1 : Grille salariale
  
- Nous souhaitons mettre en place une grille de salaire pour les employées :
+ Nous souhaitons mettre en place une grille de salaire pour les employé·e·s :
  
  | Status   | Années d'expériences | Salaire annuel (Brut) |
  |----------|----------------------|-----------------------|
@@ -14,18 +16,14 @@ Le but est d'implémenter une fonction qui prend un salarié et son nombre d'ann
  
 
 #### US-2 : Coefficient aléatoire
- N'ayant pas le temps d'évaluer les salariés et afin de mettre de l'émulation en place, nous souhaitons appliquer un coefficient aléatoire à la grille si dessus, 
+ N'ayant pas le temps d'évaluer les salariés et afin de mettre de l'émulation en place, nous souhaitons appliquer un coefficient aléatoire à la grille ci-dessus, 
  **+/-20%**.
  
-#### US-3 : Le fils du PDG
-Le fils du PDG gagnera 4 fois plus que les autres salariés.
-  
- 
- 
+#### US-3 : La fille du PDG
+La fille du PDG gagnera 4 fois plus que les autres salarié·e·s.
+
 ####  Conclusion 
   
-Toute ressemblance avec des sociétés existantes serait purement fortuite 
-  
-Mais si ce type de rémunération obscure vous choque, n'hésitez pas à consulter notre [grille de salaire publique](https://shodo.io/grille-salaire-transparente/).
+Mais si ce type de rémunération obscure vous étonne, n'hésitez pas à consulter notre [grille de salaire publique](https://shodo.io/grille-salaire-transparente/).
 
-_PS : On recrute ;)_
+_PS : On recrute à [Nantes](https://shodo.io/developpeurs/) ;)_
