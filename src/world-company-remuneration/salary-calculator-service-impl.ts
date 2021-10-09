@@ -12,10 +12,10 @@ export function salary(employeeId: number, experience: number, spread: () => num
             return "132" + K;
         } else {
             if (experience > confirmedToSeniorExperience) {
-                return "41,8" + K;
+                return "41.8" + K;
             } else {
                 if (experience > juniorToConfirmedExperience) {
-                    return "37,4" + K;
+                    return "37.4" + K;
                 } else {
                     return "33" + K;
                 }
