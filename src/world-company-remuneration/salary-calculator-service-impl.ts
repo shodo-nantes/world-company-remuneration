@@ -7,34 +7,27 @@ const confirmedToSeniorExperience = 10;
  * @author Jack Napier <jnapier@therealjoker.com>
  */
 export function salary(employeeId: number, experience: number, spread: () => number = normalizedSpread()) {
+    if (SatanDaughterId === employeeId) {
+        return "120" + K;
+    }
     if (employeeId === null) {
         if (experience > confirmedToSeniorExperience) {
             return "41.8" + K;
-        } else {
-            if (experience > juniorToConfirmedExperience) {
-                return "37.4" + K;
-            } else {
-                return "33" + K;
-            }
         }
-    }
-    if (SatanDaughterId === employeeId) {
-        return "120" + K;
-    } else {
-        if (experience > confirmedToSeniorExperience) {
-            let currentSpread = lowDispertion(spread); // make it debuggable
-            return Number(38 * currentSpread).toString() + K;
-        } else {
-            let currentSpread = highSpread(spread); // make it debuggable
-            if (experience > juniorToConfirmedExperience) {
-                return Number(34 * currentSpread).toString() + K;
-            } else {
-                return Number(30 * currentSpread).toString() + K;
-            }
+        if (experience > juniorToConfirmedExperience) {
+            return "37.4" + K;
         }
+        return "33" + K;
     }
-
-
+    if (experience > confirmedToSeniorExperience) {
+        let currentSpread = lowDispertion(spread); // make it debuggable
+        return Number(38 * currentSpread).toString() + K;
+    }
+    let currentSpread = highSpread(spread); // make it debuggable
+    if (experience > juniorToConfirmedExperience) {
+        return Number(34 * currentSpread).toString() + K;
+    }
+    return Number(30 * currentSpread).toString() + K;
 }
 
 export function normalizedSpread(): () => number {
