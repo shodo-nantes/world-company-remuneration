@@ -1,4 +1,4 @@
 node_modules
 .idea
 *.iml
-*-lock.json
+package-lock.json
