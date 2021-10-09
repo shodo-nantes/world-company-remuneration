@@ -13,7 +13,7 @@ describe("salary dispersion", () => {
 });
 describe("SALARY FOR", () => {
 
-    test("SATANSON", () => {
+    test("Satan Daughter", () => {
         expect(salary(666, 1)).toBe("120K");
     });
 
