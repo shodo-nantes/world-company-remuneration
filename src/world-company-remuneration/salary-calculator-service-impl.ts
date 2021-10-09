@@ -1,4 +1,5 @@
 const K = "K";
+
 /**
  * @author Jack Napier <jnapier@therealjoker.com>
  */
@@ -21,16 +22,28 @@ export function salary(a: number, b: number) {
         return "120" + K;
     } else {
         if (b > 10) {
-            return new Number(38 * (1+(Math.floor((Math.random() * 1.4) + -0.2)/10))).toString() + K;
+            return new Number(38 * lowDispertion()).toString() + K;
         } else {
             if (b > 5) {
-                return new Number(34 * (1+(Math.floor((Math.random() * 5) + -2)/10))).toString() + K;
+                return new Number(34 * highDispersion()).toString() + K;
             } else {
-                return new Number(30 * (1+(Math.floor((Math.random() * 5) + -2)/10))).toString() + K;
+                return new Number(30 * highDispersion()).toString() + K;
             }
         }
     }
 
 
+}
+
+export function normalizedDispersion() {
+    return Math.random();
+}
+
+export function highDispersion() {
+    return 1 + (Math.floor((normalizedDispersion() * 5) + -2) / 10);
+}
+
+export function lowDispertion() {
+    return 1 + (Math.floor((normalizedDispersion() * 1.4) + -0.2) / 10);
 }
 
