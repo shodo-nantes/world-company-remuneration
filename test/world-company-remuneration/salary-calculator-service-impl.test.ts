@@ -7,7 +7,9 @@ describe("SALARY FOR", () => {
     });
 
     test("ACTUAL EMPLOYEES", () => {
-        expect(salary(1, 15)).toBe("38K");
+        expect(salary(1, 5)).toBe("30K");
+        expect(salary(1, 6)).toBe("34K");
+        expect(salary(1, 11)).toBe("38K");
     });
 
 });
