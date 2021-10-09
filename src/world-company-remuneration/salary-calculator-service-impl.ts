@@ -7,31 +7,35 @@ const confirmedToSeniorExperience = 10;
  * @author Jack Napier <jnapier@therealjoker.com>
  */
 export function salary(employeeId: number, experience: number, spread: () => number = normalizedSpread()) {
-    function isNewEmployee() {
-        return employeeId === null;
-    }
-    let result: string;
-    if (isNewEmployee()) {
+    if (isNewEmployee(employeeId)) {
         if (experience > confirmedToSeniorExperience) {
-            result = "41.8" + K;
-        } else if (experience > juniorToConfirmedExperience) {
-            result = "37.4" + K;
-        } else {
-            result = "33" + K;
+            return "41.8" + K;
         }
-    } else if (SatanDaughterId === employeeId) {
-        result = "120" + K;
-    } else if (experience > confirmedToSeniorExperience) {
-        let currentSpread = lowDispertion(spread); // make it debuggable
-        result = Number(38 * currentSpread).toString() + K;
-    } else if (experience > juniorToConfirmedExperience) {
-        let currentSpread = highSpread(spread); // make it debuggable
-        result = Number(34 * currentSpread).toString() + K;
-    } else {
-        let currentSpread = highSpread(spread); // make it debuggable
-        result = Number(30 * currentSpread).toString() + K;
+        if (experience > juniorToConfirmedExperience) {
+            return "37.4" + K;
+        }
+        return "33" + K;
     }
-    return result;
+    if (isPdgsDaughter(employeeId)) {
+        return "120" + K;
+    }
+    if (experience > confirmedToSeniorExperience) {
+        let currentSpread = lowDispertion(spread); // make it debuggable
+        return Number(38 * currentSpread).toString() + K;
+    }
+    let currentSpread = highSpread(spread); // make it debuggable
+    if (experience > juniorToConfirmedExperience) {
+        return Number(34 * currentSpread).toString() + K;
+    }
+    return Number(30 * currentSpread).toString() + K;
+}
+
+function isPdgsDaughter(employeeId: number) {
+    return SatanDaughterId === employeeId;
+}
+
+function isNewEmployee(employeeId: number) {
+    return employeeId === null;
 }
 
 export function normalizedSpread(): () => number {
@@ -39,11 +43,9 @@ export function normalizedSpread(): () => number {
 }
 
 function highSpread(spread: () => number) {
-    let real = spread.apply(this); // make it debuggable
-    return 1 + (Math.floor((real * 5) + -2) / 10); // 0-1 / 0-5 / -2/3 / -0.2/+0.3
+    return 1 + (Math.floor((spread.apply(this) * 5) + -2) / 10);
 }
 
 function lowDispertion(spread: () => number) {
-    let real = spread.apply(this); // make it debuggable
-    return 1 + (Math.floor((real * 1.4) + -0.2) / 10); // 0-1 / 0-1.4 / 0.2-1.2 / 0.02-0.12
+    return 1 + (Math.floor((spread.apply(this) * 1.4) + -0.2) / 10);
 }
