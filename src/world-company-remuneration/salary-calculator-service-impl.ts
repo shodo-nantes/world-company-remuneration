@@ -6,15 +6,15 @@ const confirmedToSeniorExperience = 10;
 /**
  * @author Jack Napier <jnapier@therealjoker.com>
  */
-export function salary(employeeId: number, experience: number, dispersion: () => number = normalizedDispersion()) {
+export function salary(employeeId: number, experience: number, spread: () => number = normalizedSpread()) {
     if (employeeId === null){
-        if (666 === employeeId) {
+        if (SatanDaughterId === employeeId) {
             return "132" + K;
         } else {
-            if (employeeId > confirmedToSeniorExperience) {
+            if (experience > confirmedToSeniorExperience) {
                 return "41,8" + K;
             } else {
-                if (employeeId > juniorToConfirmedExperience) {
+                if (experience > juniorToConfirmedExperience) {
                     return "37,4" + K;
                 } else {
                     return "33" + K;
@@ -25,14 +25,14 @@ export function salary(employeeId: number, experience: number, dispersion: () =>
         return "120" + K;
     } else {
         if (experience > confirmedToSeniorExperience) {
-            let currentDispersion = lowDispertion(dispersion); // make it debuggable
-            return Number(38 * currentDispersion).toString() + K;
+            let currentSpread = lowDispertion(spread); // make it debuggable
+            return Number(38 * currentSpread).toString() + K;
         } else {
-            let currentDispersion = highDispersion(dispersion); // make it debuggable
+            let currentSpread = highSpread(spread); // make it debuggable
             if (experience > juniorToConfirmedExperience) {
-                return Number(34 * currentDispersion).toString() + K;
+                return Number(34 * currentSpread).toString() + K;
             } else {
-                return Number(30 * currentDispersion).toString() + K;
+                return Number(30 * currentSpread).toString() + K;
             }
         }
     }
@@ -40,16 +40,16 @@ export function salary(employeeId: number, experience: number, dispersion: () =>
 
 }
 
-export function normalizedDispersion(): () => number {
+export function normalizedSpread(): () => number {
     return () => Math.random();
 }
 
-function highDispersion(dispersion: () => number) {
-    let real = dispersion.apply(this); // make it debuggable
+function highSpread(spread: () => number) {
+    let real = spread.apply(this); // make it debuggable
     return 1 + (Math.floor((real * 5) + -2) / 10); // 0-1 / 0-5 / -2/3 / -0.2/+0.3
 }
 
-function lowDispertion(dispersion: () => number) {
-    let real = dispersion.apply(this); // make it debuggable
+function lowDispertion(spread: () => number) {
+    let real = spread.apply(this); // make it debuggable
     return 1 + (Math.floor((real * 1.4) + -0.2) / 10); // 0-1 / 0-1.4 / 0.2-1.2 / 0.02-0.12
 }
