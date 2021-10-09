@@ -21,12 +21,12 @@ export function salary(a: number, b: number) {
         return "120" + K;
     } else {
         if (b > 10) {
-            return new Number(38 * (1+(Math.floor(Math.random() * (0.2 - -0.2 + 1) + -0.2)/10))).toString() + K;
+            return new Number(38 * (1+(Math.floor((Math.random() * 1.4) + -0.2)/10))).toString() + K;
         } else {
             if (b > 5) {
-                return new Number(34 * (1+(Math.floor(Math.random() * (2 - -2 + 1) + -2)/10))).toString() + K;
+                return new Number(34 * (1+(Math.floor((Math.random() * 5) + -2)/10))).toString() + K;
             } else {
-                return new Number(30 * (1+(Math.floor(Math.random() * (2 - -2 + 1) + -2)/10))).toString() + K;
+                return new Number(30 * (1+(Math.floor((Math.random() * 5) + -2)/10))).toString() + K;
             }
         }
     }
