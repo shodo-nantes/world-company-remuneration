@@ -7,19 +7,16 @@ const confirmedToSeniorExperience = 10;
  * @author Jack Napier <jnapier@therealjoker.com>
  */
 export function salary(employeeId: number, experience: number, spread: () => number = normalizedSpread()) {
-    if (employeeId === null){
-        if (SatanDaughterId === employeeId) {
-            return "132" + K;
+    if (employeeId === null) {
+        if (experience > confirmedToSeniorExperience) {
+            return "41.8" + K;
         } else {
-            if (experience > confirmedToSeniorExperience) {
-                return "41.8" + K;
+            if (experience > juniorToConfirmedExperience) {
+                return "37.4" + K;
             } else {
-                if (experience > juniorToConfirmedExperience) {
-                    return "37.4" + K;
-                } else {
-                    return "33" + K;
-                }
-            }}
+                return "33" + K;
+            }
+        }
     }
     if (SatanDaughterId === employeeId) {
         return "120" + K;
