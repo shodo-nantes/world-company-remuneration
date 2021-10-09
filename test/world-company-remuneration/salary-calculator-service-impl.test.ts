@@ -1,5 +1,4 @@
 import {normalizedDispersion, salary} from "../../src/world-company-remuneration/salary-calculator-service-impl";
-import mock = jest.mock;
 
 const highestDispersionBoundaryExcluded = 1;
 const lowestDispersionBoundaryIncluded = 0;
