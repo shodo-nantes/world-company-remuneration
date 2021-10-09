@@ -5,7 +5,7 @@ const K = "K";
 /**
  * @author Jack Napier <jnapier@therealjoker.com>
  */
-export function salary(a: number, b: number, dispersion: () => number) {
+export function salary(a: number, b: number, dispersion: () => number = normalizedDispersion()) {
     if (a === null){
         if (666 === a) {
             return "132" + K;

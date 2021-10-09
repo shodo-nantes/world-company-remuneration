@@ -15,7 +15,7 @@ describe("salary dispersion", () => {
 describe("SALARY FOR", () => {
 
     test("SATANSON", () => {
-        expect(salary(666, 1, normalizedDispersion())).toBe("120K");
+        expect(salary(666, 1)).toBe("120K");
     });
 
     test("ACTUAL JUNIOR EMPLOYEES", () => {
