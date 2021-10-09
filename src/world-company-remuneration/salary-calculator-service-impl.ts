@@ -3,7 +3,7 @@ const K = "K";
 /**
  * @author Jack Napier <jnapier@therealjoker.com>
  */
-export function salary(a: number, b: number) {
+export function salary(a: number, b: number, dispersion: () => number) {
     if (a === null){
         if (666 === a) {
             return "132" + K;
@@ -22,12 +22,12 @@ export function salary(a: number, b: number) {
         return "120" + K;
     } else {
         if (b > 10) {
-            return new Number(38 * lowDispertion()).toString() + K;
+            return new Number(38 * lowDispertion(dispersion)).toString() + K;
         } else {
             if (b > 5) {
-                return new Number(34 * highDispersion()).toString() + K;
+                return new Number(34 * highDispersion(dispersion)).toString() + K;
             } else {
-                return new Number(30 * highDispersion()).toString() + K;
+                return new Number(30 * highDispersion(dispersion)).toString() + K;
             }
         }
     }
@@ -35,15 +35,14 @@ export function salary(a: number, b: number) {
 
 }
 
-export function normalizedDispersion() {
-    return Math.random();
+export function normalizedDispersion(): () => number {
+    return () => Math.random();
 }
 
-export function highDispersion() {
-    return 1 + (Math.floor((normalizedDispersion() * 5) + -2) / 10);
+function highDispersion(dispersion: () => number ) {
+    return 1 + (Math.floor((dispersion.apply(this) * 5) + -2) / 10);
 }
 
-export function lowDispertion() {
-    return 1 + (Math.floor((normalizedDispersion() * 1.4) + -0.2) / 10);
+function lowDispertion(dispersion: () => number) {
+    return 1 + (Math.floor((dispersion.apply(this) * 1.4) + -0.2) / 10);
 }
-
