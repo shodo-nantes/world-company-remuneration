@@ -18,9 +18,12 @@ Le but est d'implémenter une fonction qui prend un·e salarié·e et son nombre
 #### US-2 : Coefficient aléatoire
  N'ayant pas le temps d'évaluer les salariés et afin de mettre de l'émulation en place, nous souhaitons appliquer un coefficient aléatoire à la grille ci-dessus, 
  **+/-20%**.
- 
+
 #### US-3 : La fille du PDG
 La fille du PDG gagnera 4 fois plus que les autres salarié·e·s.
+
+#### US-4 : Nouvel arrivant
+Les nouveaux arrivants seront payés 10% de plus que la grille de base.  
 
 ####  Conclusion 
   
