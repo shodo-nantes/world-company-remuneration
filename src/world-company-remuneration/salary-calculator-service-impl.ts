@@ -10,8 +10,8 @@ export function salary(employeeId: number, experience: number, spread: () => num
     if (isNewEmployee(employeeId)) {
         return newEmployeeSalaries(experience);
     }
-    if (isPdgsDaughter(employeeId)) {
-        return confidentialPdgsDaughterSalary();
+    if (isCeosDaughter(employeeId)) {
+        return confidentialCeosDaughterSalary();
     }
     return actualEmployeeSalaries(experience, spread);
 }
@@ -26,7 +26,7 @@ function newEmployeeSalaries(experience: number) {
     return "33" + K;
 }
 
-function confidentialPdgsDaughterSalary() {
+function confidentialCeosDaughterSalary() {
     return "120" + K;
 }
 
@@ -50,7 +50,7 @@ function isConfirmedOrMore(experience: number) {
     return experience > juniorToConfirmedExperience;
 }
 
-function isPdgsDaughter(employeeId: number) {
+function isCeosDaughter(employeeId: number) {
     return SatanDaughterId === employeeId;
 }
 
